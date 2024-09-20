@@ -56,10 +56,10 @@ function calcFatorial(){
 
 function tabelaMult(){
     let numeroMult = Number(prompt("Digite o numero q deseja ver a tabela de multiplicação"));
-    let tabuada;
+    let tabuada = "";
 
     for(let i = 1; i < 10; i++){
-        tabuada += numeroMult +" x "+ i + " = " + numeroMult * i
+        tabuada += numeroMult +" x "+ i + " = " + numeroMult * i +"\n"
     }
     alert(tabuada)
 }
@@ -75,7 +75,7 @@ function numPares(){
 }
 
 function contarNum(){
-    let num = prompt("Digite um numero para mostar o caminho");
+    let num = prompt("Digite um numero para ser mostar");
     let espaçamento = prompt("Escolha um espaçamento entre 1 a 10")
     let quantidadeCad = 0;
 
@@ -147,14 +147,21 @@ function verificarNumMult(){
 }
 
 function verificarNumPrimo(){
-    let num = prompt("Digitem um numero");
+    let num = Number(prompt("Digitem um numero"));
 
-    for(var i = 2; i < num; i++){
-        if(num % i == 0){
-            alert("O numero não e primo")
-        }else{
-            alert("O numero e primo")
-        }   
+    for(var i = 0;i < num; i++){
+
+            if(num % 2 == 0){
+                alert("O numero é primo")
+                
+                return
+            }else{          
+                alert("O numero não é primo")
+
+                num = Number(prompt("Digitem um numero"));
+
+            }
+         
     }
 
 }
