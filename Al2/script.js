@@ -154,10 +154,14 @@
 
     function pum1142(){
         let n = Number(prompt("Digite 1 numero"))
-        let linha = 1
-        while(linha < n){
+        let i = 0
+        let numS = 1
+        let pum = ""
+        while(i < n){
+
+            pum +=  numS++ +" "+ numS++ + " "+ numS++ +" pum\n"
             
-            linha++
+            i++
         }
-        alert()
+        alert(pum)
     }
