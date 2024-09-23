@@ -149,7 +149,7 @@ function verificarNumMult(){
 function verificarNumPrimo(){
     let num = Number(prompt("Digitem um numero"));
 
-    for(var i = 0;i < num; i++){
+    for(let i = 0;i < num; i++){
 
             if(num % 2 == 0){
                 alert("O numero é primo")
