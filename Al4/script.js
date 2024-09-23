@@ -59,7 +59,7 @@ function tabelaMult(){
     let tabuada = "";
 
     for(let i = 1; i < 10; i++){
-        tabuada += numeroMult +" x "+ i + " = " + numeroMult * i +"\n"
+        tabuada += numeroMult +" x "+ i + " = " + (numeroMult * i) +"\n"
     }
     alert(tabuada)
 }
