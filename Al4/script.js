@@ -1,6 +1,6 @@
 function calcularSeqNum(){
     let numeroComp = 0
-    let numeroUs = prompt("Digite um numero");
+    let numeroUs = Number(prompt("Digite um numero"));
 
 
     while(numeroComp <= numeroUs){
@@ -65,103 +65,67 @@ function tabelaMult(){
 }
 
 function numPares(){
-    let num = prompt("Digite um numero")
+    let num = Number(prompt("Digite um numero"));
+    let tabela = ""
 
-    for(let numCad = 1; numCad < num; numCad++){
+    for(let numCad = 1; numCad <= num; numCad++){
         if(numCad % 2 == 0){
-            alert(numCad)
+            tabela += numCad +" \n"
         }
     }
+    alert(tabela)
 }
 
 function contarNum(){
-    let num = prompt("Digite um numero para ser mostar");
-    let espaçamento = prompt("Escolha um espaçamento entre 1 a 10")
-    let quantidadeCad = 0;
+    let num = Number(prompt("Digite um numero"));
+    let espaçamento = Number(prompt("Escolha um espaçamento entre 1 a 10"));
+    let numCad = 1;
 
-    while(quantidadeCad <= num){
-        if(espaçamento == 1){
-                alert(quantidadeCad)
-        }
-        else if(espaçamento == 2){
-            if(quantidadeCad % 2 == 0){
-                alert(quantidadeCad)
-            }
-        }else if(espaçamento == 3){
-            if(quantidadeCad % 3 == 0){
-                alert(quantidadeCad)
-            }
-        }else if(espaçamento == 4){
-            if(quantidadeCad % 4 == 0){
-                alert(quantidadeCad)
-            }
-        }else if(espaçamento == 5){
-            if(quantidadeCad % 5 == 0){
-                alert(quantidadeCad)
-            }
-        }else if(espaçamento == 6){
-            if(quantidadeCad % 6 == 0){
-                alert(quantidadeCad)
-            }
-        }else if(espaçamento == 7){
-            if(quantidadeCad % 7 == 0){
-                alert(quantidadeCad)
-            }
-        }else if(espaçamento == 8){
-            if(quantidadeCad % 8 == 0){
-                alert(quantidadeCad)
-            }
-        }else if(espaçamento == 9){
-            if(quantidadeCad % 9 == 0){
-                alert(quantidadeCad)
-            }
-        }else if(espaçamento == 10){
-            if(quantidadeCad % 10 == 0){
-                alert(quantidadeCad)
-            }
-            
-        }
-        quantidadeCad++
+    while(numCad <= num){
+        alert(numCad)
+        numCad += espaçamento
     }
+    
 }
 
 function numImpares(){
-    let num = prompt("Digite um numero")
-
-    for(let numCad = 1; numCad < num; numCad++){
+    let num = Number(prompt("Digite um numero"));
+    let tabela = ""
+    for(let numCad = 1; numCad <= num; numCad++){
         if(numCad % 2 != 0){
-            alert(numCad)
+            tabela += numCad +" \n"
         }
     }
+    alert(tabela)
 }
 
 function verificarNumMult(){
-    let num1 = prompt("Digite um numero");
-    let num2 = prompt("Digite um numero para verificar se e multiplo do primeiro");
+    let num1 = Number(prompt("Digite um numero"));
+    let num2 = Number(prompt("Digite um possivel multiplo"));
 
-    if( num2 % num1 == 0){
-        alert("O numero "+ num2 +" é multiplo de "+ num1)
+    if(num2 % num1 == 0){
+        alert(num2 +" é multiplo de "+ num1)
     }else{
-        alert("O numero "+ num2 +" não é multiplo de "+ num1)
+        alert(num2 +" não é multiplo de "+ num1)
     }
 }
 
 function verificarNumPrimo(){
     let num = Number(prompt("Digitem um numero"));
+    let qtdDiv = 0;
 
-    for(let i = 0;i < num; i++){
+    for(let ant = 1;ant <= num; ant++){
 
-            if(num % 2 == 0){
-                alert("O numero é primo")
-                
-                return
-            }else{          
-                alert("O numero não é primo")
-
-                num = Number(prompt("Digitem um numero"));
-
-            }
+        if(num % ant == 0){
+            qtdDiv++
+        }
          
+    }
+
+    if(qtdDiv == 2){
+        alert("Ele é primo")
+    }else{
+        alert("Ele não e primo")
     }
 
 }
