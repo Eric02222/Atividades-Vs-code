@@ -158,6 +158,7 @@ function mostrarPrimos() {
             tabela += i + " não é primo \n"
         }
     }
+    //document.getElementById("mensagem").innerHTML = tabela
     alert(tabela);
 }
 
