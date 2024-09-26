@@ -160,7 +160,7 @@
         while(i < n){
 
             pum +=  numS++ +" "+ numS++ + " "+ numS++ +" pum\n"
-            
+            numS++
             i++
         }
         alert(pum)
