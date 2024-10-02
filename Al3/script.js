@@ -4,13 +4,12 @@ function addLista() {
     let produto = document.getElementById("addLi").value;
     let posicao = items.indexOf(produto);
     
-    if(posicao != -1){
-        alert("item ja cadastrado")
-    }else{
+    if (posicao == -1) {
         items.push(produto);
         document.getElementById("lista").innerHTML = items;
+    } else {
+        alert("item ja cadastrado")
     }
-
     
 }
 
