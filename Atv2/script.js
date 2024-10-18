@@ -1,4 +1,6 @@
 let numeros = [];
+let numeros2 = [];
+
 let n1;
 let n2;
 
@@ -45,6 +47,48 @@ function mostrarArray() {
     }
 
 }
+
+
+
+function pesquisar() {
+    n1 = Number(prompt("Digite um numero:"))
+    let posicao = numeros.indexOf(n1)
+
+    if (posicao == -1) {
+        document.getElementById("resultado").innerHTML = "Este Numero não esta presente na array"
+    } else {
+        document.getElementById("resultado").innerHTML = "Numero encontrado na posição: " + posicao
+    }
+}
+
+function atv85() {
+    let num;
+
+    for (let i = 0; i < 50; i++) {
+        num = Math.ceil(Math.random() * 200  -100)
+        numeros2.push(num)
+    }
+    console.log(numeros2);
+}
+
+function mostrarArray2() {
+    document.getElementById("resultado").innerHTML = '<h2>Lançamentos dos dados:</h2>'
+    for(let i = 0; i < numeros2.length; i++){
+    document.getElementById("resultado").innerHTML += "Dados: " + numeros2[i] + "<br>"
+    }
+}
+
+function transformArr() {
+    document.getElementById("resultado").innerHTML = '<h2>Lançamentos dos dados:</h2>'
+    for(let i = 0; i < numeros2.length; i++)
+    if(numeros2[i] < 0){
+        console.log(numeros2[i])
+        numeros2.splice(i, 1, 0)
+        document.getElementById("resultado").innerHTML += "Dados: " + numeros2[i] + "<br>"
+    }
+}
+
+
 
 
 /*
