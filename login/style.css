@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(https://img.freepik.com/premium-photo/playful-3d-monkey-showcasing-its-tech-skills-as-talented-software-developer-perfect-illustrating-joy-coding_14117-518218.jpg);
+}
+
+.container {
+    width: 70vw;
+    border-style: double;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    background-color: aliceblue;
+}
+
+.register {
+    border-style: groove;
+    width: 40vw;
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgb(187, 228, 230);
+}
+
+.login {
+    border-style: groove;
+    width: 40vw;
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgb(187, 228, 230);
+}
+
+#adiciona {
+    width: 200px;
+    height: 25px;
+    background-color: chartreuse;
+}
+
+#logar {
+    width: 200px;
+    height: 25px;
+    background-color: blueviolet;
+    color: white;
+}
+
+input {
+    width: 200px;
+    height: 20px;
+    border-radius: 15px;
+}
+
+button {
+    border-radius: 5px;
+}
