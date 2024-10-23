@@ -91,7 +91,11 @@ function remove() {
     let user = document.getElementById("removerUs").value;
     let pos = bancoDeDados.indexOf(user.toUpperCase());
 
-    //existe(nome de acordo q foi declarado na função)
+    /*existe(nome de acordo q foi declarado na função) 
+    EX:
+    let lo = receber algoalgo
+    existe(lo)
+    */
 
     if (existe(user) == false) {
         document.getElementById("aviso").innerHTML = "Usuario não encontrado";
