@@ -2,13 +2,12 @@ let bancoDeDados = [];
 
 function add() {
     let user = document.getElementById("username").value;
-    let pos = bancoDeDados.indexOf(user.toLowerCase());
 
-    if (pos == -1){
-        bancoDeDados.push(user.toLowerCase());
+    if (existe(user) == false) {
+        bancoDeDados.push(user.toUpperCase());
         document.getElementById("username").value = null;
         document.getElementById("aviso").innerHTML = "Cadastro efetuado com sucesso";
-    }else{
+    } else {
         document.getElementById("aviso").innerHTML = "Pessoa ja cadastrada";
         document.getElementById("username").value = null;
     }
@@ -17,7 +16,7 @@ function add() {
     let existe = false;
 
         for (let item of bancoDeDados) {
-            if(item.toLowerCase() == user.toLowerCase()){
+            if(item.toUpperCase() == user.toUpperCase()){
                 existe = true;
                 break;
             }
@@ -37,14 +36,13 @@ function add() {
 }
 
 function login() {
-    let loUser = document.getElementById("user").value
-    let pos = bancoDeDados.indexOf(loUser.toLowerCase());
+    let user = document.getElementById("user").value
 
-    if (pos == -1){
+    if (existe(user) == false) {
         document.getElementById("aviso").innerHTML = "Usuario não encontrado";
         document.getElementById("user").value = null;
-    }else{
-        document.getElementById("aviso").innerHTML = "Login efetuado ocm sucesso";
+    } else {
+        document.getElementById("aviso").innerHTML = "Login efetuado com sucesso";
         document.getElementById("user").value = null;
     }
 
@@ -52,7 +50,7 @@ function login() {
         document.getElementById("aviso").innerHTML = "Preencha Todos os Campos";
     } else {
         for (let pos = 0; pos < bancoDeDados.length; pos++) {
-            if (bancoDeDados[pos].toLowerCase() == loUser.toLowerCase()) {
+            if (bancoDeDados[pos].toUpperCase() == loUser.toUpperCase()) {
                 document.getElementById("aviso").innerHTML = "Login efetuado com sucesso";
                 document.getElementById("user").value = null;
                 break;
@@ -63,4 +61,50 @@ function login() {
             }
         }
     }*/
+}
+
+function edit() {
+    let user = document.getElementById("editar").value;
+
+    for (let pos = 0; pos < bancoDeDados.length; pos++) {
+        if (bancoDeDados[pos].toUpperCase() == user.toUpperCase()) {
+            bancoDeDados[pos] = prompt("Digite a alteração que deseja fazer a " + bancoDeDados).toUpperCase()
+            document.getElementById("aviso").innerHTML = "Usuario editado";
+            break;
+        }
+    }
+
+    /*
+    let edit = prompt("Digite a alteração que deseja fazer a " + bancoDeDados) ;
+    
+    if(existe(user) == false){
+        document.getElementById("aviso").innerHTML = "Usuario não encontrado";
+    }else{
+        bancoDeDados[pos] = edit;
+    }
+        */
+
+    document.getElementById("aviso").value = null;
+}
+
+function remove() {
+    let user = document.getElementById("removerUs").value;
+    let pos = bancoDeDados.indexOf(user.toUpperCase());
+
+    if (existe(user) == false) {
+        document.getElementById("aviso").innerHTML = "Usuario não encontrado";
+    } else {
+        bancoDeDados.splice(pos, 1);
+        document.getElementById("aviso").innerHTML = "Usuario removido";
+    }
+    document.getElementById("removerUs").value = null;
+}
+
+function existe(user) {
+    let pos = bancoDeDados.indexOf(user.toUpperCase());
+    if(pos == -1){
+        return false;
+    }else{
+        return true;
+    }
 }

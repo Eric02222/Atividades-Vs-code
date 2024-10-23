@@ -80,12 +80,13 @@ function mostrarArray2() {
 
 function transformArr() {
     document.getElementById("resultado").innerHTML = '<h2>Lançamentos dos dados:</h2>'
-    for(let i = 0; i < numeros2.length; i++)
-    if(numeros2[i] < 0){
-        console.log(numeros2[i])
-        numeros2.splice(i, 1, 0)
-        document.getElementById("resultado").innerHTML += "Dados: " + numeros2[i] + "<br>"
+    for(let i = 0; i < numeros2.length; i++){
+        if(numeros2[i] < 0){
+            numeros2[i] = 0;    
+            document.getElementById("resultado").innerHTML += "Dados: " + numeros2[i] + "<br>"
+        }
     }
+    
 }
 
 

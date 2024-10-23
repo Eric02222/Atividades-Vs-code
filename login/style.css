@@ -8,24 +8,17 @@ body {
 
 .container {
     width: 70vw;
+    height: 50vw;
     border-style: double;
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
-    background-color: aliceblue;
+    backdrop-filter: blur(5px);
 }
 
-.register {
-    border-style: groove;
-    width: 40vw;
-    border-radius: 15px;
-    text-align: center;
-    background-color: rgb(187, 228, 230);
-}
-
-.login {
+.crud {
     border-style: groove;
     width: 40vw;
     border-radius: 15px;
@@ -46,6 +39,27 @@ body {
     color: white;
 }
 
+#edit {
+    width: 200px;
+    height: 25px;
+    background-color: rgb(95, 187, 230);
+}
+
+#remover {
+    width: 200px;
+    height: 25px;
+    background-color: rgb(255, 54, 54);
+}
+
+.mensagem {
+    text-align: center;
+    margin: 10px;
+    width: 220px;
+    height: 50px;
+    background-color: floralwhite;
+    border-radius: 30px;
+}
+
 input {
     width: 200px;
     height: 20px;
@@ -53,5 +67,6 @@ input {
 }
 
 button {
+    margin: 10px;
     border-radius: 5px;
 }
