@@ -80,6 +80,14 @@ function mostrarArray2() {
 }
 
 function transformArr() {
+<<<<<<< HEAD
+    document.getElementById("resultado").innerHTML = '<h2>Lançamentos dos dados:</h2>'
+    for(let i = 0; i < numeros2.length; i++){
+        if(numeros2[i] < 0){
+            numeros2[i] = 0;    
+            document.getElementById("resultado").innerHTML += "Dados: " + numeros2[i] + "<br>"
+        }
+=======
     for (let i = 0; i < numeros2.length; i++)
         if (numeros2[i] < 0) {
             numeros2[i] = 0
@@ -117,7 +125,9 @@ function geMae() {
         num = Math.ceil(Math.random() * 100)
         mae.push(num);
         document.getElementById("mae").innerHTML += "<li style='background-color: blueviolet; color:white' >" + mae[i] + "</li>"
+>>>>>>> 53ffa92840f19b2fcdf748c16741a8ccf6771721
     }
+    
 }
 
 function geFilho() {
