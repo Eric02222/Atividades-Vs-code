@@ -46,11 +46,11 @@ function login() {
         document.getElementById("user").value = null;
     }
 
-    /*if (!loUser) {
+    /*if (!user) {
         document.getElementById("aviso").innerHTML = "Preencha Todos os Campos";
     } else {
         for (let pos = 0; pos < bancoDeDados.length; pos++) {
-            if (bancoDeDados[pos].toUpperCase() == loUser.toUpperCase()) {
+            if (bancoDeDados[pos].toUpperCase() == user.toUpperCase()) {
                 document.getElementById("aviso").innerHTML = "Login efetuado com sucesso";
                 document.getElementById("user").value = null;
                 break;
@@ -90,6 +90,12 @@ function edit() {
 function remove() {
     let user = document.getElementById("removerUs").value;
     let pos = bancoDeDados.indexOf(user.toUpperCase());
+
+     /*existe(nome de acordo q foi declarado na função) 
+    EX:
+    let lo = receber algoalgo
+    existe(lo)
+    */
 
     if (existe(user) == false) {
         document.getElementById("aviso").innerHTML = "Usuario não encontrado";
