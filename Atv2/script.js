@@ -63,9 +63,10 @@ function pesquisar() {
 
 function atv85() {
     let num;
+    document.getElementById("resultado").innerHTML = "Array gerada com sucesso <br>"
 
     for (let i = 0; i < 50; i++) {
-        num = Math.ceil(Math.random() * 200  -100)
+        num = Math.ceil(Math.random() * 200 - 100)
         numeros2.push(num)
     }
     console.log(numeros2);
@@ -73,20 +74,19 @@ function atv85() {
 
 function mostrarArray2() {
     document.getElementById("resultado").innerHTML = '<h2>Lançamentos dos dados:</h2>'
-    for(let i = 0; i < numeros2.length; i++){
-    document.getElementById("resultado").innerHTML += "Dados: " + numeros2[i] + "<br>"
+    for (let i = 0; i < numeros2.length; i++) {
+        document.getElementById("resultado").innerHTML += "Dados: " + numeros2[i] + "<br>"
     }
 }
 
 function transformArr() {
     document.getElementById("resultado").innerHTML = '<h2>Lançamentos dos dados:</h2>'
-    for(let i = 0; i < numeros2.length; i++){
-        if(numeros2[i] < 0){
-            numeros2[i] = 0;    
-            document.getElementById("resultado").innerHTML += "Dados: " + numeros2[i] + "<br>"
-        }
+    for(let i = 0; i < numeros2.length; i++)
+    if(numeros2[i] < 0){
+        console.log(numeros2[i])
+        numeros2.splice(i, 1, 0)
+        document.getElementById("resultado").innerHTML += "Dados: " + numeros2[i] + "<br>"
     }
-    
 }
 
 
