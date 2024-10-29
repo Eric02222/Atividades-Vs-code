@@ -1,16 +1,20 @@
 let bancoDeDados = [];
 
 function add() {
-    let user = document.getElementById("username").value;
+    let user = {
+        username: document.getElementById("username").value.toUpperCase(),
+        password: document.getElementById("senha").value
+    }
 
-    if (existe(user) == false) {
-        bancoDeDados.push(user.toUpperCase());
-        document.getElementById("username").value = null;
+    if (existe(user.username) == false) {
+        bancoDeDados.push(user);
         document.getElementById("aviso").innerHTML = "Cadastro efetuado com sucesso";
     } else {
         document.getElementById("aviso").innerHTML = "Pessoa ja cadastrada";
-        document.getElementById("username").value = null;
     }
+
+    document.getElementById("username").value = null;
+    document.getElementById("senha").value = null;
 
     /*
     let existe = false;
@@ -36,15 +40,16 @@ function add() {
 }
 
 function login() {
-    let user = document.getElementById("user").value
+    let usuario = document.getElementById("user").value.toUpperCase();
+    let senha = document.getElementById("pass").value;
 
-    if (existe(user) == false) {
-        document.getElementById("aviso").innerHTML = "Usuario não encontrado";
-        document.getElementById("user").value = null;
+    if (authentica(usuario, senha) == false) {
+        document.getElementById("aviso").innerHTML = "Usuario ou Senha Incorreta";
     } else {
         document.getElementById("aviso").innerHTML = "Login efetuado com sucesso";
-        document.getElementById("user").value = null;
     }
+    document.getElementById("user").value = null;
+    document.getElementById("pass").value = null;
 
     /*if (!user) {
         document.getElementById("aviso").innerHTML = "Preencha Todos os Campos";
@@ -107,10 +112,28 @@ function remove() {
 }
 
 function existe(user) {
-    let pos = bancoDeDados.indexOf(user.toUpperCase());
-    if(pos == -1){
+    for (let usuario of bancoDeDados) {
+        if (usuario.username == user) {
+            return true;
+        }
+    }
+    return false;
+    /*
+    let pos = bancoDeDados(user);
+    let posPass = bancoDeDados(password);
+    if (pos == -1 || posPass) {
         return false;
-    }else{
+    } else {
         return true;
     }
+    */
+}
+
+function authentica(username, password) {
+    for (let usuario of bancoDeDados) {
+        if (usuario.username == username && usuario.password == password) {
+            return true;
+        }
+    }
+    return false;
 }
