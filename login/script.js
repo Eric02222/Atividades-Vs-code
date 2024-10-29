@@ -93,8 +93,8 @@ function edit() {
 }
 
 function remove() {
-    let user = document.getElementById("removerUs").value;
-    let pos = bancoDeDados.indexOf(user.toUpperCase());
+    let user = document.getElementById("removerUs").value.toUpperCase();
+    let pos = indexOfByEr(user);
 
     /*existe(nome de acordo q foi declarado na função) 
     EX:
@@ -102,11 +102,11 @@ function remove() {
     existe(lo)
     */
 
-    if (existe(user) == false) {
-        document.getElementById("aviso").innerHTML = "Usuario não encontrado";
-    } else {
+    if (pos != -1) {
         bancoDeDados.splice(pos, 1);
         document.getElementById("aviso").innerHTML = "Usuario removido";
+    } else {
+        document.getElementById("aviso").innerHTML = "Usuario não encontrado";
     }
     document.getElementById("removerUs").value = null;
 }
@@ -136,4 +136,13 @@ function authentica(username, password) {
         }
     }
     return false;
+}
+
+function indexOfByEr(username) {
+    for (let usuario of bancoDeDados) {
+        if (usuario.username == username) {
+            return bancoDeDados.indexOf(usuario);
+        }
+    }
+    return -1;
 }
