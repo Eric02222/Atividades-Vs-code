@@ -80,14 +80,72 @@ function mostrarArray2() {
 }
 
 function transformArr() {
-    document.getElementById("resultado").innerHTML = '<h2>Lançamentos dos dados:</h2>'
-    for(let i = 0; i < numeros2.length; i++)
-    if(numeros2[i] < 0){
-        console.log(numeros2[i])
-        numeros2.splice(i, 1, 0)
-        document.getElementById("resultado").innerHTML += "Dados: " + numeros2[i] + "<br>"
+    for (let i = 0; i < numeros2.length; i++)
+        if (numeros2[i] < 0) {
+            numeros2[i] = 0
+        }
+
+    document.getElementById("resultado").innerHTML = '<h2>Lançamentos dos dados:</h2>';
+    for (let i = 0; i < numeros2.length; i++) {
+        document.getElementById("resultado").innerHTML += "Dados: " + numeros2[i] + "<br>"; // Exibir todos os números
+    }
+
+}
+
+let pai = [];
+let mae = [];
+let filho = [];
+
+function atv87() {
+    let num;
+    document.getElementById("resultado").innerHTML = "<h2>Lançamentos dos dados:</h2>"
+
+    document.getElementById("marc").innerHTML += "<h3>" + "i" + "</h3>"
+    document.getElementById("pai").innerHTML += "<h3>" + "Pai" + "</h3>"
+    for (let i = 0; i < 50; i++) {
+        num = Math.ceil(Math.random() * 100)
+        pai.push(num);
+        document.getElementById("marc").innerHTML += "<li>" + i + "</li>"
+        document.getElementById("pai").innerHTML += "<li style='background-color: greenyellow;'>" + pai[i] + "</li>"
+    }
+
+}
+
+function geMae() {
+    document.getElementById("mae").innerHTML += "<h4>" + "Mãe" + "</h4>"
+    for (let i = 0; i < 50; i++) {
+        num = Math.ceil(Math.random() * 100)
+        mae.push(num);
+        document.getElementById("mae").innerHTML += "<li style='background-color: blueviolet; color:white' >" + mae[i] + "</li>"
     }
 }
+
+function geFilho() {
+    document.getElementById("filho").innerHTML += "<h4>" + "Pai" + "</h4>"
+    for (let i = 0; i < 50; i++) {
+        if (pai[i] % 2 == 0) {
+            filho.push(pai[i])
+            document.getElementById("filho").innerHTML += "<li style='background-color: greenyellow;''>" + pai[i] + "</li>"
+
+        } else if (mae[i] % 2 != 0) {
+            filho.push(mae[i]);
+            document.getElementById("filho").innerHTML += "<li style='background-color: blueviolet; color:white'>" + mae[i] + "</li>"
+
+        }
+        
+    }
+    console.log(filho)
+    for (let i = 0; i < 50; i++) {
+        if (filho[i] == undefined) {
+            document.getElementById("filho").innerHTML += ""
+
+        }
+    }
+}
+
+
+
+
 
 
 
