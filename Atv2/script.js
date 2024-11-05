@@ -112,7 +112,7 @@ function atv87() {
 }
 
 function geMae() {
-    document.getElementById("mae").innerHTML += "<h3>" + "Mãe" + "</h4>"
+    document.getElementById("mae").innerHTML += "<h4>" + "Mãe" + "</h4>"
     for (let i = 0; i < 50; i++) {
         num = Math.ceil(Math.random() * 100)
         mae.push(num);
