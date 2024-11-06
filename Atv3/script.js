@@ -8,11 +8,6 @@ function modPve() {
     window.location = "pve.html"
 }
 
-function modsobrevivencia() {
-    window.location = "sobrevivencia.html";
-
-}
-
 function pgInicial() {
     window.location = "modalidade.html";
 }
