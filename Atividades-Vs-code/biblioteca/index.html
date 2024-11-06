@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Biblioteca</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Biblioteca</h1>
+        <div class="bib">
+            <h3>Cadastro de Livros</h3>
+            <label for="cadTitulo">Titulo:</label>
+            <input type="text" id="cadTitulo" placeholder="Ex: Harry Potter"><br>
+            <label for="cadAutor">Autor:</label>
+            <input type="text" id="cadAutor" placeholder="Ex: J.K. Rowling"><br>
+            <label for="cadGenero">Genero:</label>
+            <input type="text" id="cadGenero" placeholder="Ex: Fantasia"><br>
+            <label for="cadEditora">Editora:</label>
+            <input type="text" id="cadEditora" placeholder="Ex: Bloomsbury Publishing"><br>
+            <label for="cadIsbn">ISBN:</label>
+            <input type="text" id="cadIsbn" placeholder="Ex: 123456789"><br>
+            <button onclick="add()" id="cadLivro">Cadastrar Livro</button>
+        </div>
+        <div class="bib">
+            <h3>Listagem de Livros</h3>
+            <p id="acervo">Nenhum Livro Cadastrado</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
